@@ -2,15 +2,22 @@ from django.shortcuts import render
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
 from Portfolio.settings import EMAIL_HOST_USER
-import re
+import re,os
+from .models import FilesAdmin
+from django.http import HttpResponse, Http404
+
 
 # Create your views here.
 def index(request):
     info = ""
     error = False
+    files = FilesAdmin.objects.all()
+    for post in files:
+        file = post
     context = {
         'info' : info,
         'error' : error,
+        'file' : file
     }
     return render(request, 'portfolios/index.html', context)
 
@@ -49,3 +56,13 @@ def mail(request):
         else:
             return HttpResponse('Make sure all fields are entered and valid')
     return render(request, 'portfolios/index.html')
+
+#Create view for download files
+def download(request,path):
+    file_path = os.path.join(settings.MEDIA_ROOT, path)
+    if os.path.exists(file_path):
+        with open(file_path,'rb') as fh:
+            response = HttpResponse(fh.read(),content_type="application/adminupload")
+            response['Content-Disposition'] = 'inline;filename='+os.path.basename(file_path)
+            return response
+    raise Http404

@@ -108,7 +108,7 @@
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img src="{% static 'img/C#.png' %}" alt="Portfolio image" class="img-fluid">
+                        <img src="{% static 'img/C#.png' %}" alt="Portfolio image" class="img-fluid" style="padding-top: 50px;">
                     </div>
                 </div>
                 <!-- Portfolio Item 5-->
@@ -117,7 +117,7 @@
                         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img src="{% static 'img/matlab.png' %}" alt="Portfolio image" class="img-fluid">
+                        <img src="{% static 'img/matlab.png' %}" alt="Portfolio image" class="img-fluid" style="padding-top: 50px;">
                     </div>
                 </div>
                 <!-- Portfolio Item 6-->
@@ -188,7 +188,7 @@
             </div>
             <!-- About Section Button -->
             <div class="text-center mt-4">
-                <a href="#" class="btn btn-x1 btn-outline-light">
+                <a href="{{file.adminupload.url}}" class="btn btn-x1 btn-outline-light" download="{{file.adminupload.url}}">
                     Curriculum Vitae
                 </a>
             </div>
@@ -260,9 +260,9 @@
                         Location
                     </h4>
                     <p class="lead mb-0">
-                        Douala, Cameroun
+                        Yaounde, Cameroun
                         <br>
-                        Pk15
+                        Nsimeyong
                     </p>
                 </div>
                 <!-- Footer About Text -->
