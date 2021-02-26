@@ -125,12 +125,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
 #Email Send
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'dilanechristian2@gmail.com'
-EMAIL_HOST_PASSWORD = 'H695053741'
-EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '7a442927ac2dfa'
+EMAIL_HOST_PASSWORD = 'bba675c78c5700'
+EMAIL_PORT = 2525
 EMAIL_USE_TLS = True#True for gmail
 EMAIL_USE_SSL = False
