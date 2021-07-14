@@ -122,10 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATIC_ROOT = str(BASE_DIR) + '/static/'
+"""STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]"""
+
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
@@ -152,7 +153,5 @@ if os.getcwd() == "/app":
     ALLOWED_HOSTS = ['*']
     #Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = 'staticfiles'
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
+    STATIC_ROOT = str(BASE_DIR) + '/staticfiles'
+    
