@@ -131,9 +131,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
 #Email Send
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '7a442927ac2dfa'
-EMAIL_HOST_PASSWORD = 'bba675c78c5700'
+EMAIL_HOST = 'your_email_host'
+EMAIL_HOST_USER = 'your_email_host_user'
+EMAIL_HOST_PASSWORD = 'your_host_password'
 EMAIL_PORT = 2525
 EMAIL_USE_TLS = True#True for gmail
 EMAIL_USE_SSL = False
